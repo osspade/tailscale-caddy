@@ -1,0 +1,13 @@
+#Description
+Adds tailscale using evironment variable
+env $TSKEY
+
+#TEST
+docker run --name caddy $(docker build  -t osspade/tailscale-caddy:latest --load --no-cache -q .)
+
+#SSH
+docker exec -it caddy sh
+
+#Deploy
+docker push osspade/tailscale-caddy:latest
+
